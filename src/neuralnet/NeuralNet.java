@@ -75,54 +75,6 @@ public class NeuralNet implements Serializable {
 					double e = 0;
 					for (int layerIndex = this.structure.length - 1; layerIndex >= 0; layerIndex--) {
 						for (int neuronIndex = 0; neuronIndex < this.structure[layerIndex].length; neuronIndex++) {
-
-//							if (layerIndex == this.structure.length - 1) {
-//								// neuron is in output layer
-//								Neuron neuron = this.structure[layerIndex][neuronIndex];
-//
-//								double derivativeOfPrediction = (1 - neuron.getActivationValue()) * deriveSigmoid(neuron.getActivationValue());
-//
-//								for (int weightIndex = 0; weightIndex < neuron.getWeightCount(); weightIndex++) {
-//									
-//									double derivationOfPreviousLayersActivison = neuron.getWeight(weightIndex)
-//											* deriveSigmoid(neuron.getActivationValue());
-//
-//									Neuron nodeInPreviousLayer = this.structure[layerIndex - 1][weightIndex];
-//									nodeInPreviousLayer.setDeivativeOfActivation(derivationOfPreviousLayersActivison);
-//
-//									double derivativeOfWeight = neuron.getInputFromPreviousLayer(weightIndex)
-//											* deriveSigmoid(neuron.getActivationValue());
-//									neuron.updateWeight(LEARNIG_RATE * derivativeOfPrediction * derivativeOfWeight,
-//											weightIndex);
-//								}
-//								double derivativeOfBias = deriveSigmoid(neuron.getActivationValue());
-//								neuron.updateBias(LEARNIG_RATE * derivativeOfPrediction * derivativeOfBias);
-//								
-//								feedForward(inputs[i]);
-//								int a = 0;
-//							} else {
-//								// neuron in hidden layer
-//								Neuron neuron = this.structure[layerIndex][neuronIndex];
-//
-//								for (int weightIndex = 0; weightIndex < neuron.getWeightCount(); weightIndex++) {
-//									double derivationOfPreviousLayersActivison = neuron.getWeight(weightIndex)
-//											* deriveSigmoid(neuron.getActivationValue());
-//
-//									if (layerIndex != 0) {
-//										Neuron nodeInPreviousLayer = this.structure[layerIndex - 1][weightIndex];
-//										nodeInPreviousLayer
-//												.setDeivativeOfActivation(derivationOfPreviousLayersActivison);
-//									}
-//
-//									double derivativeOfWeight = neuron.getInputFromPreviousLayer(weightIndex)
-//											* deriveSigmoid(neuron.getActivationValue());
-//									neuron.updateWeight(
-//											LEARNIG_RATE * neuron.getDeivativeOfActivation() * derivativeOfWeight,
-//											weightIndex);
-//								}
-//								double derivativeOfBias = deriveSigmoid(neuron.getActivationValue());
-//								neuron.updateBias(LEARNIG_RATE * neuron.getDeivativeOfActivation() * derivativeOfBias);
-//							}
 							double delta = 0.000001;
 							Neuron neuron = this.structure[layerIndex][neuronIndex];
 							
